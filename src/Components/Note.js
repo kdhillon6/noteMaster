@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Button } from 'react-bootstrap';
 import Delete from 'react-icons/lib/ti/delete'
 import Save from 'react-icons/lib/fa/floppy-o'
 import Edit from 'react-icons/lib/fa/edit'
@@ -7,16 +6,12 @@ import '../main/note.css'
 
 export default class Note extends Component{
   //------------Contstuctor---------------------------------------------------
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
         editing: false,
     }
-    //simillar to componentWillMount
-    this.style = {
-        right: this.randomBetween(0, window.innerWidth - 150, 'px'),
-        top: this.randomBetween(0, window.innerHeight -150, 'px')
-    }
+
     this.save = this.save.bind(this);
     this.edit = this.edit.bind(this);
     this.remove = this.remove.bind(this);
@@ -44,7 +39,7 @@ export default class Note extends Component{
       this.setState( {editing: true} );
   }
   save() {
-    //  this.props.onChange(this.refs.newText.value, this.props.id);
+      this.props.onChange(this.refs.newText.value, this.props.id);
       this.setState({editing: false})
   }
 
@@ -58,7 +53,7 @@ export default class Note extends Component{
        return (
            <div className="note" style={this.style}>
              <textarea ref="newText" defaultValue={this.props.children}></textarea>
-             <Button bsStyle="info" bsSize="xsmall" onClick={this.save}><Save/></Button>
+             <button className="btn btn-sm btn-outline-success " onClick={this.save}><Save/></button>
            </div>
        )
    }
@@ -67,8 +62,8 @@ export default class Note extends Component{
            <div className="note" style={this.style}>
                <p>{this.props.children}</p>
                <span>
-                 <Button bsSize="xsmall" onClick={this.edit}><Edit/></Button>
-                 <Button bsStyle="danger" bsSize="xsmall" onClick={this.remove}><Delete/></Button>
+                 <button className="btn btn-sm btn-outline-success " onClick={this.edit}><Edit/></button>
+                 <button className="btn btn-sm btn-outline-success"  onClick={this.remove}><Delete/></button>
                </span>
            </div>
         )

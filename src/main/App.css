@@ -2,12 +2,24 @@
 
 body,
 html,
-div#root {
+div#mainBar {
   height: 100%;
   overflow: hidden;
+
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+.container{
+  padding-right: 0;
+  padding-left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.col-xs-9 .col-md-9 .col-lg-9{
+  background-color: #eab92d;
 }

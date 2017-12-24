@@ -1,14 +1,16 @@
 
-div.board{
+.board{
   height: 100%;
   overflow: hidden;
 }
 
-div.board {
+.board {
   background-color: 'brown';
   width: 100%;
-  background: #eab92d;
+  height: 100%;
+  background: 	#428bca;
 }
+
 .board > button {
   position: fixed;
   top: 10px;
