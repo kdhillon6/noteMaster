@@ -14,7 +14,7 @@ class App extends Component {
           <div className="row">
 
             <div className="col-xs-9 col-md-9 col-lg-9 container">
-              <Board count={4}/>
+              <Board count={10}/>
             </div>
             <div className="col-xs-3 col-md-3 col-lg-3 container">
               <Sidebar/>
